@@ -15,19 +15,26 @@ public class Main {
     public static void main(String[] args) {
         Student student1 = new Student("Alex");
         Student student2 = new Student("Oleg");
-        Student student3 = new Student("Anna");
-        Student student4 = new Student("Vika");
 
         Group group1 = new Group("A");
         Group group2 = new Group("B");
-        Group group3 = new Group("C");
 
 
         student1.setGroup(group1);
         student2.setGroup(group1);
-        group1.addStudent(student1);
-
         System.out.println(student1);
         System.out.println(group1);
+
+        System.out.println();
+
+        student2.setGroup(group2);
+        System.out.println(student2);
+        System.out.println(group2);
+
+        System.out.println();
+
+        student2.setGroup(null);
+        System.out.println(student2);
+        System.out.println(group2);
     }
 }

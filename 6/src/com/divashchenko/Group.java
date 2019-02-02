@@ -16,7 +16,11 @@ public class Group {
     }
 
     public void removeStudent(Student student) {
+        students.remove(student);
+    }
 
+    public String getName() {
+        return name;
     }
 
     @Override

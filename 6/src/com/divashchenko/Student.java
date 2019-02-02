@@ -9,15 +9,32 @@ public class Student {
     }
 
     public void setGroup(Group newGroup) {
-        group = newGroup;
-
+        if (newGroup == null) {
+            group.removeStudent(this);
+            group = null;
+        } else if (group == null) {
+            group = newGroup;
+            newGroup.addStudent(this);
+        } else {
+            group.removeStudent(this);
+            group = newGroup;
+            newGroup.addStudent(this);
+        }
     }
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", group=" + group +
-                '}';
+        if (group == null) {
+            return "Student{" +
+                    "name='" + name + '\'' +
+                    ", group=" + "No group" +
+                    '}';
+        } else {
+            return "Student{" +
+                    "name='" + name + '\'' +
+                    ", group=" + group.getName() +
+                    '}';
+        }
+        
     }
 }
