@@ -36,7 +36,7 @@ public class Main {
         if (dot.equals("oneUp") || dot.equals("oneDown")) {
             return "twoCenter";
         } else if (dot.equals("twoCenter")) {
-            int tmp = random.nextInt(3);
+            int tmp = random.nextInt(4);
             if (tmp == 0) {
                 return "oneUp";
             } else if (tmp == 1) {
@@ -54,7 +54,7 @@ public class Main {
                 return "fourCenter";
             }
         } else if (dot.equals("fourCenter")) {
-            int tmp = random.nextInt(3);
+            int tmp = random.nextInt(4);
             if (tmp == 0) {
                 return "fiveUp";
             } else if (tmp == 1) {
@@ -70,7 +70,7 @@ public class Main {
     }
 
     private static void chanceOfTheGame() {
-        int[] arr = new int[1000];
+        int[] arr = new int[100000];
 
         for (int i = 0; i < arr.length; i++) {
             arr[i] = dotGame();
